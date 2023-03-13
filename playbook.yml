@@ -23,4 +23,4 @@
       shell: docker ps -aq --filter ancestor="samaelarch/mini_project" | xargs -r docker rm
 
     - name: creating updated container
-      shell: docker run -it --name calc samaelarch/mini_project
+      shell: docker run -i --name calc samaelarch/mini_project
