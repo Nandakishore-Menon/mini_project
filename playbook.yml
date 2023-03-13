@@ -18,7 +18,7 @@
       shell: docker ps -aq --filter ancestor="samaelarch/mini_project" | xargs -r docker rm
 
     - name: remove old image
-      shell: docker rmi -f samaelarch/mini_project:latest
+      shell: docker images -q --filter=reference="samaelarch/mini_project" | xargs -r docker rmi -f
 
     - name: pull the image
       docker_image:
