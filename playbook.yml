@@ -1,8 +1,5 @@
 - name: pull mini_project image
   hosts: all
-  vars:
-    pip_package_requirements:
-      - "requests"
   tasks:
     # - name: Start service
     #   service:
@@ -11,9 +8,8 @@
 
     - name: Install pip requests library
       pip:
-        name: "{{ item }}"
+        name: requests
         state: present
-        with_items: "{{ pip_package_requirements }}"
 
     - name: pull the image
       docker_image:
