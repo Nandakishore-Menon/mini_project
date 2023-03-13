@@ -1,5 +1,8 @@
 - name: pull mini_project image
   hosts: all
+  vars:
+    pip_package_requirements:
+      - "requests"
   tasks:
     # - name: Start service
     #   service:
