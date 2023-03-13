@@ -9,6 +9,12 @@
     #     name: docker
     #     state: started
 
+    - name: Install pip requests library
+      pip:
+        name: "{{ item }}"
+        state: present
+        with_items: "{{ pip_package_requirements }}"
+
     - name: pull the image
       docker_image:
         name: samaelarch/mini_project
