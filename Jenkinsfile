@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'maven-3.9.0'
+        docker 'docker'
     }
     stages {
         stage('Git pull') {
