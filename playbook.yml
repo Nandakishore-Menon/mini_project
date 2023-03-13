@@ -11,16 +11,19 @@
         name: requests
         state: present
 
-    - name: pull the image
-      docker_image:
-        name: samaelarch/mini_project
-        source: pull
-
     - name: stopping old container
       shell: docker ps -aq --filter ancestor="samaelarch/mini_project" | xargs -r docker stop
 
     - name: deleting old container
       shell: docker ps -aq --filter ancestor="samaelarch/mini_project" | xargs -r docker rm
+
+    - name: remove old image
+      shell: docker rmi samaelarch/mini_project
+
+    - name: pull the image
+      docker_image:
+        name: samaelarch/mini_project
+        source: pull
 
     - name: creating updated container
       shell: docker run -id --name calc samaelarch/mini_project
