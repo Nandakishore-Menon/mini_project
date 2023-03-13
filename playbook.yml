@@ -1,10 +1,10 @@
 - name: pull mini_project image
   hosts: all
   tasks:
-    - name: Start service
-      service:
-        name: docker
-        state: started
+    # - name: Start service
+    #   service:
+    #     name: docker
+    #     state: started
 
     - name: pull the image
       docker_image:
