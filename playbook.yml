@@ -26,4 +26,4 @@
         source: pull
 
     - name: creating updated container
-      shell: docker run -id --name calc samaelarch/mini_project
+      shell: docker run -id samaelarch/mini_project
