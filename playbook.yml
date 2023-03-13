@@ -12,7 +12,7 @@
         state: present
 
     - name: stopping old container
-      shell: docker ps -aq --filter=status=unning | xargs -r docker stop
+      shell: docker ps -aq --filter=status=running | xargs -r docker stop
 
     - name: deleting old container
       shell: docker ps -aq --filter=status=exited | xargs -r docker rm
