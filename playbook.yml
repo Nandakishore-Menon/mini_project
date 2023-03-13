@@ -12,10 +12,10 @@
         state: present
 
     - name: stopping old container
-      shell: docker ps -aq --filter ancestor="samaelarch/mini_project" | xargs -r docker stop
+      shell: docker ps -aq --filter=status=unning | xargs -r docker stop
 
     - name: deleting old container
-      shell: docker ps -aq --filter ancestor="samaelarch/mini_project" | xargs -r docker rm
+      shell: docker ps -aq --filter=status=exited | xargs -r docker rm
 
     - name: remove old image
       shell: docker images -q --filter=reference="samaelarch/mini_project" | xargs -r docker rmi -f
