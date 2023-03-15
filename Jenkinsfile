@@ -33,17 +33,6 @@ pipeline {
             ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'playbook.yml', sudoUser: null
             }
         }
-
-        stage("LogStash for monitoring"){
-            steps{
-                timestamps {
-                    logstash {
-                        echo "Built!"
-                        logstashSend
-                    }
-                }
-            }
-        }
      }
     post {
        always {
