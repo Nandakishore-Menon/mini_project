@@ -1,7 +1,13 @@
 package com.calculator;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.util.*;
 
 public class Calculator {
+
+  private static final Logger logger = LogManager.getLogger(Calculator.class);
+
   public static void main(String args[]) {
     Scanner sc = new Scanner(System.in);
     Operation operation;
@@ -17,10 +23,12 @@ public class Calculator {
       int option = sc.nextInt();
       switch (option) {
       case 0:
+        logger.info("Exiting the calculator");
         exit = true;
         break;
 
       case 1:
+        logger.info("Executing square root function");
         System.out.println("Enter x: ");
         a = sc.nextDouble();
         operation = new Squareroot();
@@ -29,6 +37,7 @@ public class Calculator {
         break;
 
       default:
+        logger.warn("Invalid function option");
         System.out.println("Invalid option! Try again!\n");
         break;
       }
