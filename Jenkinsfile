@@ -11,6 +11,16 @@ pipeline {
                 credentialsId: 'github_mini_project'
             }
         }
+        stage('Compile') {
+            steps {
+                sh 'mvn compiler:compile'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
         stage('Build jar') {
             steps {
                 sh 'mvn clean package'
