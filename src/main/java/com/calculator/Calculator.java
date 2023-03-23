@@ -54,16 +54,16 @@ public class Calculator {
           System.out.println("Answer: " + result + "\n");
           logger.info("[NaturalLog] " + a + " " + b + " [Result] " + result);
         }
-//        case 4 -> {
-//          System.out.println("In x^y, Enter x: ");
-//          a = sc.nextDouble();
-//          System.out.println("In x^y, Enter y: ");
-//          b = sc.nextDouble();
-//          operation = new Power();
-//          result = operation.calculate(a, b);
-//          System.out.println("Answer: " + result + "\n");
-//          logger.info("[Power] " + a + " " + b + " [Result] " + result);
-//        }
+        case 4 -> {
+          System.out.println("In x^y, Enter x: ");
+          a = sc.nextDouble();
+          System.out.println("In x^y, Enter y: ");
+          b = sc.nextDouble();
+          operation = new Power();
+          result = operation.calculate(a, b);
+          System.out.println("Answer: " + result + "\n");
+          logger.info("[Power] " + a + " " + b + " [Result] " + result);
+        }
         default -> {
           logger.warn("[Invalid] " + a + " " + b + " [Result] " + result);
           System.out.println("Invalid option! Try again!\n");
